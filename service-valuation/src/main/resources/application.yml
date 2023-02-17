@@ -1,0 +1,59 @@
+# 应用名称
+server:
+  port: 8018
+
+spring:
+  redis:
+    host: 127.0.0.1
+    password: 123
+    port: 6379
+  datasource:
+    url: jdbc:mysql://192.168.68.123:3306/online-taxi?&useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      driver-class-name: com.mysql.jdbc.Driver
+      filters: stat,wall,slf4j
+      initial-size: 5
+      max-active: 20
+      max-pool-prepared-statement-per-connection-size: 20
+      max-wait: 60000
+      min-evictable-idle-time-millis: 300000
+      min-idle: 5
+      pool-prepared-statements: true
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      use-global-data-source-stat: true
+      validation-query: SELECT 'x'
+  activemq:
+    broker-url: tcp://192.168.33.239:61617
+    in-memory: false
+    pool:
+      enabled: true
+      max-connections: 100
+
+services:
+  address:
+    - account: http://localhost:8011
+    - dispatch: http://localhost:8012
+    - order: http://localhost:8013
+    - map: http://localhost:8014
+    - message: http://localhost:8015
+    - netty: http://localhost:8016
+    - pay: http://localhost:8017
+    - valuation: http://localhost:8018
+    - file: http://localhost:8019
+    - government: http://localhost:9999
+
+# internal 程序内部
+logging:
+  config: classpath:log/logback-spring.xml
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    use-generated-keys: true

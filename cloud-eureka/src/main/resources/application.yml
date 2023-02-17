@@ -1,0 +1,53 @@
+# 应用名称
+spring:
+  application:
+    name: cloud-eureka
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false   #表示不向注册中心注册自己
+    fetch-registry: false   #表示自己就是注册端，其职责就是维护服务实例，并不需要检索服务
+    service-url:
+      defaultZone: http://localhost:7900/eureka/,http://localhost:7901/eureka/,http://localhost:7902/eureka/
+  server:
+    enable-self-preservation: true   #自我保护机制
+    renewal-percent-threshold: 0.85   #自我保护阔值
+    eviction-interval-timer-in-ms: 1000   #拉取到不可用的服务
+    #多级缓存（false）默认是true，关闭从readOnly读注册表，是否开启readOnly读缓存
+    use-read-only-response-cache: true
+    #readWrite和readOnly同步时间间隔
+    response-cache-update-interval-ms: 1000
+
+---
+spring:
+  profiles: 7900
+server:
+  port: 7900
+eureka:
+  instance:
+    hostname: eureka-7900 # eureka服务端的实例名称
+#    service-url:
+#      defaultZone: http://eureka-7900:7900/eureka/
+
+---
+spring:
+  profiles: 7901
+server:
+  port: 7901
+eureka:
+  instance:
+    hostname: eureka-7901
+#    service-url:
+#      defaultZone: http://eureka-7900:7901/eureka/
+
+---
+spring:
+  profiles: 7902
+server:
+  port: 7902
+eureka:
+  instance:
+    hostname: eureka-7902
+#    service-url:
+#      defaultZone: http://eureka-7900:7902/eureka/

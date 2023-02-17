@@ -1,0 +1,18 @@
+# 应用名称
+server:
+  port: 8080
+eureka:
+  client:
+    service-url:    #打乱配置，还要所有的服务都写一样顺序的配置
+      defaultZone: http://localhost:7900/eureka
+    enabled: true
+    registry-fetch-interval-seconds: 30
+  instance:
+    lease-renewal-interval-in-seconds: 30
+spring:
+  application:
+    name: api-passenger
+ribbon:
+  eager-load:
+    enable: true
+    clients: demo
