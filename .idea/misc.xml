@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/service-passenger-user/pom.xml" />
         <option value="$PROJECT_DIR$/map-service/pom.xml" />
         <option value="$PROJECT_DIR$/service-valuation/pom.xml" />
+        <option value="$PROJECT_DIR$/service-dispatch/pom.xml" />
       </list>
     </option>
   </component>

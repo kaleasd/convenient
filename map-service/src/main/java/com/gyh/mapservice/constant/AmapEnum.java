@@ -1,6 +1,8 @@
 package com.gyh.mapservice.constant;
 
-public enum AmapEnum {
+import com.gyh.internalcommon.constant.CodeEnum;
+
+public enum AmapEnum implements CodeEnum {
     /**
      * 高德接口请求成功
      */
@@ -25,6 +27,7 @@ public enum AmapEnum {
         this.value = value;
     }
 
+    @Override
     public int getCode() {
         return code;
     }

@@ -1,10 +1,12 @@
 package com.gyh.mapservice.constant;
 
+import com.gyh.internalcommon.constant.CodeEnum;
+
 /**
  * 
- * @date 2018/8/20
+ * @date 2023/2/20
  */
-public enum MapStatusEnum {
+public enum MapStatusEnum implements CodeEnum {
 
     /**
      * 围栏已存在
@@ -21,6 +23,7 @@ public enum MapStatusEnum {
         this.value = value;
     }
 
+    @Override
 	public int getCode() {
 		return code;
 	}

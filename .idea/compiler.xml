@@ -13,6 +13,7 @@
         <module name="api-passenger" />
         <module name="service-valuation" />
         <module name="map-service" />
+        <module name="service-dispatch" />
         <module name="cloud-eureka" />
         <module name="service-sms" />
         <module name="service-passenger-user" />
@@ -26,6 +27,7 @@
       <module name="cloud-zuul" options="-parameters" />
       <module name="internal-common" options="-parameters" />
       <module name="map-service" options="-parameters" />
+      <module name="service-dispatch" options="-parameters" />
       <module name="service-passenger-user" options="-parameters" />
       <module name="service-sms" options="-parameters" />
       <module name="service-valuation" options="-parameters" />
