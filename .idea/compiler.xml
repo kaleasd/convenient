@@ -13,6 +13,7 @@
         <module name="api-passenger" />
         <module name="service-valuation" />
         <module name="map-service" />
+        <module name="api-listen-order" />
         <module name="service-dispatch" />
         <module name="cloud-eureka" />
         <module name="service-sms" />
@@ -22,6 +23,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-listen-order" options="-parameters" />
       <module name="api-passenger" options="-parameters" />
       <module name="cloud-eureka" options="-parameters" />
       <module name="cloud-zuul" options="-parameters" />

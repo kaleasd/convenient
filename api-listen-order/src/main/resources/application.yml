@@ -1,0 +1,7 @@
+# 应用名称
+server:
+  port: 7080
+spring:
+  application:
+    name: api-listen-order
+

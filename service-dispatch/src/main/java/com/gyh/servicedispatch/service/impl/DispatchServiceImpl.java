@@ -526,12 +526,12 @@ public class DispatchServiceImpl implements DispatchService {
        return carInfoMapper.selectByPrimaryKey(id);
     }
 
-    private class LazyHodler {
-        DispatchServiceImpl ins = new DispatchServiceImpl();
+    private static class LazyHodler {
+        static DispatchServiceImpl ins = new DispatchServiceImpl();
     }
 
-    @Override
-    public DispatchService ins() {
+
+    public static DispatchService ins() {
         return LazyHodler.ins;
     }
 }

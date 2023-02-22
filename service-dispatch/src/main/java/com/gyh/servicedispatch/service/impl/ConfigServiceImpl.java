@@ -107,6 +107,10 @@ public class ConfigServiceImpl implements ConfigService {
         }
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(time);
+        /**
+         * HOUR_OF_DAY:当天第几个小时
+         * MINUTE：当前小时第几分钟
+         * */
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
         int minute = calendar.get(Calendar.MINUTE);
         JSONArray array = JSONArray.fromObject(carDispatchSpecialPeriodSet.getTimePeriod());
@@ -123,9 +127,9 @@ public class ConfigServiceImpl implements ConfigService {
 
     @Override
     public boolean isInTimePeriod(int hour, int minute, String start, String end) {
-        double t = Double.valueOf(hour + "." + minute);
-        double s = Double.valueOf(start.replace(":", "."));
-        double e = Double.valueOf(end.replace(":", "."));
+        double t = Double.parseDouble(hour + "." + minute);
+        double s = Double.parseDouble(start.replace(":", "."));
+        double e = Double.parseDouble(end.replace(":", "."));
         if (t >= s && t <= e) {
             return true;
         }

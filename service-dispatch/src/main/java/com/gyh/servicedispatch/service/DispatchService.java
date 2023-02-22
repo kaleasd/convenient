@@ -77,5 +77,5 @@ public interface DispatchService {
 
     CarInfo getCarInfoById(int id);
 
-    DispatchService ins();
+
 }

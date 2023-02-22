@@ -6,6 +6,8 @@ eureka:
   instance:
     hostname: localhost
   client:
+    healthcheck:
+      enabled: true #开启健康监测
     register-with-eureka: false   #表示不向注册中心注册自己
     fetch-registry: false   #表示自己就是注册端，其职责就是维护服务实例，并不需要检索服务
     service-url:
