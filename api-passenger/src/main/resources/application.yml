@@ -1,18 +1,85 @@
-# 应用名称
+# 应用名称及验证账号
+
 server:
   port: 8080
+#注册中心
 eureka:
   client:
     service-url:    #打乱配置，还要所有的服务都写一样顺序的配置
       defaultZone: http://localhost:7900/eureka
-    enabled: true
+    enabled: false
     registry-fetch-interval-seconds: 30
   instance:
     lease-renewal-interval-in-seconds: 30
+    hostname: localhost
+    instance-id: api-passenger
 spring:
   application:
     name: api-passenger
+    admin:
+      enabled: true
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 2000
+  #zipkin
+  zipkin:
+    base-url: http://localhost:9411/
+    #采样比例1，百分之八采样
+  sleuth:
+    sampler:
+      rate: 1
+
+feign:
+  compression:
+    request:
+      mime-types:
+      - text/xml
+      min-request-size: 2048
+  hystrix:
+    enabled: true
+
+  client:
+    config:
+      service-valuation:
+#        request-interceptors:
+#        - com.gyh.apipassenger.feign.interceptor.MyBasicAuthRequestInterceptor
+        connect-timeout: 5000
+        read-timeout: 5000
+        logger-level: basic
+
+service-sms:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+service-valuation:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
 ribbon:
   eager-load:
-    enable: true
-    clients: demo
+    enable: false
+    clients:
+      - SERVICE-SMS
+#开启feignhystrix
+hystrix:
+  metrics:
+    enabled: true
+
+#Admin监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      #默认是never
+      show-details: always
+      enabled: true
+
+logging:
+  level:
+    org.springframework: DEBUG
+    com.gyh.apipassenger.feign.ServiceForecast: debug

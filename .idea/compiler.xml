@@ -7,15 +7,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="internal-common" />
         <module name="service-verification-code" />
-        <module name="cloud-zuul" />
         <module name="api-passenger" />
+        <module name="cloud-eureka" />
+        <module name="api-driver" />
+        <module name="internal-common" />
+        <module name="cloud-zuul" />
         <module name="service-valuation" />
         <module name="map-service" />
         <module name="api-listen-order" />
         <module name="service-dispatch" />
-        <module name="cloud-eureka" />
+        <module name="service-file" />
         <module name="service-sms" />
         <module name="service-passenger-user" />
       </profile>
@@ -23,6 +25,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="api-driver" options="-parameters" />
       <module name="api-listen-order" options="-parameters" />
       <module name="api-passenger" options="-parameters" />
       <module name="cloud-eureka" options="-parameters" />
@@ -30,6 +33,7 @@
       <module name="internal-common" options="-parameters" />
       <module name="map-service" options="-parameters" />
       <module name="service-dispatch" options="-parameters" />
+      <module name="service-file" options="-parameters" />
       <module name="service-passenger-user" options="-parameters" />
       <module name="service-sms" options="-parameters" />
       <module name="service-valuation" options="-parameters" />

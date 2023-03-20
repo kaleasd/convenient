@@ -4,12 +4,78 @@ server:
 
 spring:
   application:
-    name: convenient-zuul
+    name: online-taxi-zuul
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/online-taxi-three?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+      #数据库连接密码
+    password: root
+      #进行数据库连接池的配置
+    dbcp2:
+        #初始化提供的连接数
+      initial-size: 5
+        #数据库连接池的最小维持连接数
+      min-idle: 5
+        #最大的连接数
+      max-total: 5
+        #等待连接获取的最大超时时间
+      max-wait-millis: 200
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
 
+#mybatis配置
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-7900:7900/eureka/
+      defaultZone: http://localhost:7900/eureka/
+    healthcheck:
+      enabled: true
   instance:
     hostname: localhost
-    instance-id: convenient-zuul
+    instance-id: online-taxi-zuul
+
+#zuul:
+##    以下配置，表示忽略下面的值向微服务传播，以下配置为空表示：所有请求头都透传到后面微服务。
+##  sensitive-headers:
+#  routes:
+#    # 此处名字随便取
+#    custom-zuul-name:
+#      path: /zuul-custom-name/**
+#      service-id: service-sms
+
+zuul:
+  routes:
+    xxx:
+      path: /forword1/**
+      url: forward:/myController
+
+#    # 配合 风雨冷人
+#    xxxx: /zuul-api-driver/**
+##     此处名字随便取
+#    custom-zuul-name:
+#      path: /zuul-api-driver/**
+#      url: http://localhost:8003/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      ##默认是never
+      show-details: ALWAYS
+      enabled: true
+    routes:
+      enabled: true
+
+#logging:
+#  level:
+#    root: debug

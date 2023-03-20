@@ -1,7 +1,41 @@
 # 应用名称
 server:
-  port: 7080
+  port: 7084
 spring:
   application:
     name: api-listen-order
+  #是否向server注册服务，默认true
+  cloud:
+    service-registry:
+      auto-registration:
+        enabled: true
 
+#注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7900/eureka/
+  instance:
+    #服务器刷新时间配置，每个这个时间之后会主动心跳一次
+    lease-renewal-interval-in-seconds: 30
+    #服务器过期时间配置，超过这个时间没有接受到心跳EurekaServer就会将这个实力剔除
+    lease-expiration-duration-in-seconds: 90
+    hostname: localhost
+    #true表示，将自己的IP注册到Eureka Server上，不配置或false表示将所在操作系统hostname注册到eureka server上
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+    metadata-map:
+      user.name: root
+      user.password: root
+      yueyi: 2023
+    ip-address: 127.0.0.1
+
+#Admin监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

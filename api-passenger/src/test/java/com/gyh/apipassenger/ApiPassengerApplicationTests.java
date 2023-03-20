@@ -14,19 +14,28 @@ class ApiPassengerApplicationTests {
 
     @Test
     void contextLoads() {
+        /**
+         * redis guava
+         * */
+        LoadingCache<String, String> cache = CacheBuilder.newBuilder()
+                .expireAfterAccess(5, TimeUnit.SECONDS)
+                .initialCapacity(2)
+                .build(new CacheLoader<String, String>() {
+                    @Override
+                    public String load(String s) throws Exception {
+                        return "load: " + new Random().nextInt(100);
+                    }
+                });
     }
 
-    /**
-     * redis guava
-     * */
-    LoadingCache<String, String> cache = CacheBuilder.newBuilder()
-            .expireAfterAccess(5, TimeUnit.SECONDS)
-            .initialCapacity(2)
-            .build(new CacheLoader<String, String>() {
-                @Override
-                public String load(String s) throws Exception {
-                    return "load: " + new Random().nextInt(100);
-                }
-            });
+    @Test
+    public void ruleOfRibbonTest() {
+
+        Random random = new Random();
+        final int number = random.nextInt(10);
+        if (number < 7) {
+            return;
+        }
+    }
 
 }

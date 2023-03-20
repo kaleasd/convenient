@@ -1,0 +1,64 @@
+2023-03-06 10:24:19,999 | INFO | main | com.gyh.servicefile.ServiceFileApplication | (StartupInfoLogger.java:55)- Starting ServiceFileApplication using Java 1.8.0_211 on DESKTOP-UPRP1AS with PID 65556 (D:\workspace\demo\SpringCloud\convenient\service-file\target\classes started by gyh in D:\workspace\demo\SpringCloud\convenient)
+2023-03-06 10:24:20,006 | INFO | main | com.gyh.servicefile.ServiceFileApplication | (SpringApplication.java:645)- No active profile set, falling back to 1 default profile: "default"
+2023-03-06 10:24:22,099 | WARN | main | org.mybatis.spring.mapper.ClassPathMapperScanner | (Logger.java:44)- No MyBatis mapper was found in '[com.gyh.mapper]' package. Please check your configuration.
+2023-03-06 10:24:22,612 | INFO | main | org.springframework.boot.web.embedded.tomcat.TomcatWebServer | (TomcatWebServer.java:108)- Tomcat initialized with port(s): 8089 (http)
+2023-03-06 10:24:22,673 | INFO | main | org.apache.coyote.http11.Http11NioProtocol | (DirectJDKLog.java:173)- Initializing ProtocolHandler ["http-nio-8089"]
+2023-03-06 10:24:22,674 | INFO | main | org.apache.catalina.core.StandardService | (DirectJDKLog.java:173)- Starting service [Tomcat]
+2023-03-06 10:24:22,674 | INFO | main | org.apache.catalina.core.StandardEngine | (DirectJDKLog.java:173)- Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-03-06 10:24:22,854 | INFO | main | org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] | (DirectJDKLog.java:173)- Initializing Spring embedded WebApplicationContext
+2023-03-06 10:24:22,855 | INFO | main | org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext | (ServletWebServerApplicationContext.java:290)- Root WebApplicationContext: initialization completed in 2706 ms
+2023-03-06 10:24:22,919 | WARN | main | org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext | (AbstractApplicationContext.java:591)- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'callRecordingController': Unsatisfied dependency expressed through field 'alidyplsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'alidyplsServiceImpl': Unsatisfied dependency expressed through field 'secretVoiceRecordsMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.gyh.servicefile.mapper.SecretVoiceRecordsMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-03-06 10:24:22,923 | INFO | main | org.apache.catalina.core.StandardService | (DirectJDKLog.java:173)- Stopping service [Tomcat]
+2023-03-06 10:24:22,947 | INFO | main | org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener | (ConditionEvaluationReportLoggingListener.java:136)- 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-03-06 10:24:22,967 | ERROR | main | org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter | (LoggingFailureAnalysisReporter.java:40)- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field secretVoiceRecordsMapper in com.gyh.servicefile.service.impl.AlidyplsServiceImpl required a bean of type 'com.gyh.servicefile.mapper.SecretVoiceRecordsMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.gyh.servicefile.mapper.SecretVoiceRecordsMapper' in your configuration.
+
+2023-03-06 10:26:56,070 | INFO | main | com.gyh.servicefile.ServiceFileApplication | (StartupInfoLogger.java:55)- Starting ServiceFileApplication using Java 1.8.0_211 on DESKTOP-UPRP1AS with PID 70068 (D:\workspace\demo\SpringCloud\convenient\service-file\target\classes started by gyh in D:\workspace\demo\SpringCloud\convenient)
+2023-03-06 10:26:56,074 | INFO | main | com.gyh.servicefile.ServiceFileApplication | (SpringApplication.java:645)- No active profile set, falling back to 1 default profile: "default"
+2023-03-06 10:26:56,718 | WARN | main | org.mybatis.spring.mapper.ClassPathMapperScanner | (Logger.java:44)- No MyBatis mapper was found in '[com.gyh.mapper]' package. Please check your configuration.
+2023-03-06 10:26:57,024 | INFO | main | org.springframework.boot.web.embedded.tomcat.TomcatWebServer | (TomcatWebServer.java:108)- Tomcat initialized with port(s): 8089 (http)
+2023-03-06 10:26:57,031 | INFO | main | org.apache.coyote.http11.Http11NioProtocol | (DirectJDKLog.java:173)- Initializing ProtocolHandler ["http-nio-8089"]
+2023-03-06 10:26:57,031 | INFO | main | org.apache.catalina.core.StandardService | (DirectJDKLog.java:173)- Starting service [Tomcat]
+2023-03-06 10:26:57,032 | INFO | main | org.apache.catalina.core.StandardEngine | (DirectJDKLog.java:173)- Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-03-06 10:26:57,163 | INFO | main | org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] | (DirectJDKLog.java:173)- Initializing Spring embedded WebApplicationContext
+2023-03-06 10:26:57,163 | INFO | main | org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext | (ServletWebServerApplicationContext.java:290)- Root WebApplicationContext: initialization completed in 1029 ms
+2023-03-06 10:26:57,208 | WARN | main | org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext | (AbstractApplicationContext.java:591)- Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'callRecordingController': Unsatisfied dependency expressed through field 'alidyplsService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'alidyplsServiceImpl': Unsatisfied dependency expressed through field 'secretVoiceRecordsMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.gyh.servicefile.mapper.SecretVoiceRecordsMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2023-03-06 10:26:57,210 | INFO | main | org.apache.catalina.core.StandardService | (DirectJDKLog.java:173)- Stopping service [Tomcat]
+2023-03-06 10:26:57,225 | INFO | main | org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener | (ConditionEvaluationReportLoggingListener.java:136)- 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-03-06 10:26:57,239 | ERROR | main | org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter | (LoggingFailureAnalysisReporter.java:40)- 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field secretVoiceRecordsMapper in com.gyh.servicefile.service.impl.AlidyplsServiceImpl required a bean of type 'com.gyh.servicefile.mapper.SecretVoiceRecordsMapper' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.gyh.servicefile.mapper.SecretVoiceRecordsMapper' in your configuration.
+

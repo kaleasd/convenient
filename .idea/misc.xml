@@ -16,6 +16,8 @@
         <option value="$PROJECT_DIR$/service-valuation/pom.xml" />
         <option value="$PROJECT_DIR$/service-dispatch/pom.xml" />
         <option value="$PROJECT_DIR$/api-listen-order/pom.xml" />
+        <option value="$PROJECT_DIR$/api-driver/pom.xml" />
+        <option value="$PROJECT_DIR$/service-file/pom.xml" />
       </list>
     </option>
   </component>

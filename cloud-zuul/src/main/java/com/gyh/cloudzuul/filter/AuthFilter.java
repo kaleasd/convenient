@@ -57,13 +57,13 @@ public class AuthFilter extends ZuulFilter {
         // 获取上下文
         RequestContext requestContext = RequestContext.getCurrentContext();
         HttpServletRequest request = requestContext.getRequest();
-//		String uri = request.getRequestURI();
-//		System.out.println("来源uri："+uri);
-//		//只有此接口/api-passenger/api-passenger-gateway-test/hello才被拦截
-//		String checkUri = "/api-passenger/api-passenger-gateway-test/hello";
-//		if(checkUri.equalsIgnoreCase(uri)) {
-//			return true;
-//		}
+		String uri = request.getRequestURI();
+		System.out.println("来源uri："+uri);
+		//只有此接口/api-passenger/api-passenger-gateway-test/hello才被拦截
+		String checkUri = "/api-passenger/api-passenger-gateway-test/hello";
+		if(checkUri.equalsIgnoreCase(uri)) {
+			return true;
+		}
 //  		 测试路径
 //		if(uri.contains("api-driver")) {
 //			return true;

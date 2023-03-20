@@ -19,6 +19,13 @@
     </properties>
 
     <dependencies>
+        <!-- openfeign,用来实现接口伪装 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>3.1.3</version>
+        </dependency>
+
         <!-- web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

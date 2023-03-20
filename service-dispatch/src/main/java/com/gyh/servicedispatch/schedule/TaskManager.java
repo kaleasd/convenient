@@ -123,10 +123,6 @@ public class TaskManager {
         if (taskConditions == null) {
             return ResponseResult.fail(BusinessInterfaceStatus.FAIL.getCode(), TASK_CONDITIONS_IS_NULL);
         }
-        if (task == null) {
-            log.error("#orderId = " + orderId + " task = null");
-            return null;
-        }
         log.info("#orderId = " + orderId + " type = " + type);
         task.setTaskConditions(taskConditions);
         int status = task.execute(System.currentTimeMillis());
