@@ -22,6 +22,9 @@ spring:
   sleuth:
     sampler:
       rate: 1
+  aop:
+    auto: true #等价于@EnableAspectJAutoProxy
+    proxy-target-class: true #使用CGLIB动态代理
 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml #mybatis配置文件所在路径

@@ -54,6 +54,7 @@ zuul:
   routes:
     xxx:
       path: /forword1/**
+      serviceId: forword1
       url: forward:/myController
 
 #    # 配合 风雨冷人
