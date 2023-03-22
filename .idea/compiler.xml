@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="service-verification-code" />
         <module name="api-passenger" />
+        <module name="service-jms-consumer" />
         <module name="cloud-eureka" />
         <module name="api-driver" />
         <module name="internal-common" />

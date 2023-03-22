@@ -18,6 +18,7 @@
         <option value="$PROJECT_DIR$/api-listen-order/pom.xml" />
         <option value="$PROJECT_DIR$/api-driver/pom.xml" />
         <option value="$PROJECT_DIR$/service-file/pom.xml" />
+        <option value="$PROJECT_DIR$/service-jms-consumer/pom.xml" />
       </list>
     </option>
   </component>
