@@ -68,7 +68,7 @@ public class AuthFilter extends ZuulFilter {
 //		if(uri.contains("api-driver")) {
 //			return true;
 //		}
-        return true;
+        return false;
     }
 
     /**
@@ -91,7 +91,7 @@ public class AuthFilter extends ZuulFilter {
                 BoundValueOperations<String, String> stringStringBoundValueOperations = redisTemplate.boundValueOps(RedisKeyPrefixConstant.PASSENGER_LOGIN_CODE_KEY_PRE + tokenUserId);
                 String redisToken = stringStringBoundValueOperations.get();
                 if (redisToken.equals(token)) {
-                    return null;
+                    return true;
                 }
             }
         }

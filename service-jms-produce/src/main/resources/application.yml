@@ -1,0 +1,42 @@
+server:
+  port: 5002
+spring:
+  application:
+    name: service-jms-produce
+  activemq:
+    broker-url: tcp://127.0.0.1:61616
+    user: admin
+    password: admin
+    pool:
+      enabled: true
+      max-connections: 100
+    jms:
+      pub-sub-domain: true
+
+eureka:
+  server:
+    enable-self-preservation: false       #关闭自我保护
+    eviction-interval-timer-in-ms: 2000   #剔除失败服务间隔，单位毫秒
+  client:
+    service-url:
+      defaultZone: http://root:root@eureka-7901:7901/eureka/
+  instance:
+    lease-renewal-interval-in-seconds: 5  #服务刷新时间配置，每个这个时间会主动心跳一次
+    lease-expiration-duration-in-seconds: 100   #服务过期时间配置，超过这个时间没有接受到心跳EurekaServer就会将这个实例剔除
+    hostname: localhost   #获取与此实例相关联的主机名，其他实例可以用此示例进行远程调用
+    prefer-ip-address: true
+    status-page-url: /actuator/info   #eureka注册中心的URL link
+    health-check-url-path: /actuator/health   #健康检查的URL
+    instance-id: service-wallet
+    metadata-map:
+      map.user: root
+      map.password: root
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

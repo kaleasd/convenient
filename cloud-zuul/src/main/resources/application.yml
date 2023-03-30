@@ -56,6 +56,8 @@ zuul:
       path: /forword1/**
       serviceId: forword1
       url: forward:/myController
+    # 配合 龙哥，后面两个*号，表示 所有路径都转发，一个*表示只转发一级
+    service-sms: /zuul-api-driver/**
 
 #    # 配合 风雨冷人
 #    xxxx: /zuul-api-driver/**

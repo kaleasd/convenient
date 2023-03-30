@@ -14,10 +14,14 @@
     <file url="file://$PROJECT_DIR$/service-dispatch/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-file/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-jms-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-jms-produce/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-jms-produce/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-passenger-user/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-passenger-user/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-sms/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-valuation/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/service-verification-code/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-wallet/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/service-wallet/src/main/resources" charset="UTF-8" />
   </component>
 </project>

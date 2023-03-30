@@ -19,6 +19,8 @@
         <option value="$PROJECT_DIR$/api-driver/pom.xml" />
         <option value="$PROJECT_DIR$/service-file/pom.xml" />
         <option value="$PROJECT_DIR$/service-jms-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/service-jms-produce/pom.xml" />
+        <option value="$PROJECT_DIR$/service-wallet/pom.xml" />
       </list>
     </option>
   </component>

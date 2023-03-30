@@ -2,20 +2,9 @@
 spring:
   application:
     name: cloud-eureka
-  security:
-    user:
-      name: root
-      password: root
 
 
 eureka:
-  instance:
-    hostname: localhost
-  client:
-    register-with-eureka: false   #表示不向注册中心注册自己
-    fetch-registry: false   #表示自己就是注册端，其职责就是维护服务实例，并不需要检索服务
-    service-url:
-      defaultZone: http://localhost:7900/eureka/,http://localhost:7901/eureka/,http://localhost:7902/eureka/
   server:
     enable-self-preservation: true   #自我保护机制
     renewal-percent-threshold: 0.85   #自我保护阔值
@@ -24,30 +13,46 @@ eureka:
     use-read-only-response-cache: true
     #readWrite和readOnly同步时间间隔
     response-cache-update-interval-ms: 1000
+    # spring-cloud中注册表同步重试次数默认为0
+    registry-sync-retries: 5
 
 ---
 spring:
-  profiles: 7900
+  profiles: eureka-7900
 server:
   port: 7900
 eureka:
   instance:
     hostname: eureka-7900 # eureka服务端的实例名称
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-7900:7900/eureka/,http://eureka-7901:7901/eureka/,http://eureka-7902:7902/eureka/
 
 ---
 spring:
-  profiles: 7901
+  profiles: eureka-7901
 server:
   port: 7901
 eureka:
   instance:
     hostname: eureka-7901
-
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-7900:7900/eureka/,http://eureka-7901:7901/eureka/,http://eureka-7902:7902/eureka/
 ---
 spring:
-  profiles: 7902
+  profiles: eureka-7902
 server:
   port: 7902
 eureka:
   instance:
     hostname: eureka-7902
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-7900:7900/eureka/,http://eureka-7901:7901/eureka/,http://eureka-7902:7902/eureka/
